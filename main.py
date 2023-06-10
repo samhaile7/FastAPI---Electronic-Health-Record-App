@@ -11,7 +11,15 @@ conn = psycopg2.connect(
     user="postgres",
     password="postgres1")
 
-@app.get("api/patients")
+#uvicorn main:app --reload
+#To run server with fast reload ON
+
+@app.get("/")
+async def home():
+    return "PrimeEHR - The BEST electronic health record system"
+
+
+@app.get("/patients")
 def list_all_patients():
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM patient; ")
