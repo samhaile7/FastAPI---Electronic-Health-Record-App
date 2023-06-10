@@ -12,7 +12,7 @@ conn = psycopg2.connect(
     password="postgres1")
 
 #uvicorn main:app --reload
-#To run server with fast reload ON
+#Terminal command to run server with fast reload ON
 
 @app.get("/")
 async def home():
